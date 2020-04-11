@@ -1,11 +1,30 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import * as fb from "./../firebaseConfig";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
+  state: {
+    currentUser: null,
+    userProfile: {}
+  },
+  mutations: {
+    setCurrentUser(state, val) {
+      state.currentUser = val
+    },
+    setUserProfile(state, val) {
+        state.userProfile = val
+    }
+  },
+  actions: {
+    fetchUserProfile({ commit, state }) {
+      fb.usersCollection.doc(state!.currentUser!['uid']).get().then(res => {
+          commit('setUserProfile', res.data())
+      }).catch(err => {
+          console.log(err)
+      })
+    }
+  },
   modules: {}
 });
