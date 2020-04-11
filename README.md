@@ -32,3 +32,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+To run, just do npm install then npm run serve

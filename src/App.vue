@@ -10,7 +10,7 @@
       <router-link to="/labs">Labs</router-link> |
       <router-link to="/Shoreline">Shoreline</router-link> |
       <router-link to="/factory">Factory</router-link>
-    </div>
+    </div> 
     <!-- <router-view /> -->
   </div>
 </template>
